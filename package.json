@@ -1,18 +1,19 @@
 {
-  "name": "carpenter-framework",
+  "name": "oh-node",
   "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
     "dev": "nodemon -e ts --exec \"npm run build\"",
-    "build": "tsc && node dist/app.js",
+    "build": "tsc",
     "test": "jest --coverage --verbose --colors --silent",
     "lint": "tslint -c tslint.json -p tsconfig.json"
   },
   "author": "0xMatt",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^6.1.0"
+    "dotenv": "^6.1.0",
+    "path-to-regexp": "^2.4.0"
   },
   "devDependencies": {
     "@types/jest": "^23.3.7",

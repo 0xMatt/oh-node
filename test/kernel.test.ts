@@ -1,5 +1,4 @@
 import { Container, Web } from '../src/Kernel';
-import app from '../../app/config/app';
 
 describe('container', () => {
 
@@ -13,3 +12,4 @@ describe('container', () => {
 
   });
 });
+

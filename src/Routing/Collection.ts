@@ -24,7 +24,7 @@ export class Collection {
    * @param options
    * @returns {this}
    */
-  add(route: string, name: string, action: string, options?) {
+  add(route: string, name: string, action: any, options?) {
     this.routes = this.routes.concat([new Route(route, name, action, options)]);
 
     return this;

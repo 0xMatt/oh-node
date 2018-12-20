@@ -39,9 +39,10 @@ export class Router {
   private match(request) {
     return this.routes.getRoutes().filter((route: Route) => {
       const match = route.matches(request);
-      if (false !== match) {
-        return route.setParams(match);
+      if (match) {
+        route.setParams(match);
       }
+      return match;
     });
   }
 }

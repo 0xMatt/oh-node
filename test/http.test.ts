@@ -1,10 +1,44 @@
+import {Kernel} from '../src/Http/Kernel';
+import {Container} from '../src/Kernel/Container';
+import {Router, Collection} from '../src/Routing';
 
+describe('http kernel', () => {
+  test('can handle requests', () => {
+    const kernel = new Kernel(
+      new Container(),
+      new Router(new Collection())
+    );
 
-describe('foo', () => {
-  test('Fake test', () => {
-    expect(true).toBeTruthy();
+    const request = new Request,
+      response = new Response;
+    expect(response.statusCode).toBe(undefined);
+    kernel.handle(request, response);
+    expect(response.statusCode).toEqual(404);
   });
-  test('Fake test2', () => {
-    expect(true).toBeTruthy();
+
+  test('can resolve requests', () => {
+
+    const routes = new Collection;
+    routes.add('/', 'index', 'test@test');
+    routes.add('/foo', 'foo', () => {
+      return 1;
+    });
+
+    const kernel = new Kernel(new Container, new Router(routes));
+    expect(kernel.resolve(routes.getRoutes()[1])).toEqual(1);
+
   });
 });
+
+class Request {}
+class Response {
+  statusCode: number;
+  body: any;
+
+  writeHead(statusCode: number) {
+    this.statusCode = statusCode;
+  }
+  end(body: any) {
+    this.body = body;
+  }
+}

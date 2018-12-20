@@ -1,3 +1,4 @@
+
 import { Container } from '../Kernel';
 import { Router, Route } from '../Routing';
 
@@ -29,6 +30,9 @@ export class Kernel {
    * @param response
    */
   handle(request, response) {
+
+    console.log('Incoming request', request);
+
     const route = this.router.resolve(request);
     if (!route) {
       response.writeHead(404);

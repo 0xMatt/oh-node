@@ -37,7 +37,6 @@ export abstract class App {
    */
   protected services: Array<Service> = [];
 
-
   /**
    *
    */

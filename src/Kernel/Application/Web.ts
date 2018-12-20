@@ -12,22 +12,26 @@ export class Web extends App {
    */
   boot() {
 
+    const config = this.container.make('config');
+
+    const kernel = new Kernel(
+        this.getContainer(),
+        new Router(config.get('routes'))
+    );
+
     if (cluster.isMaster) {
       console.info(`Master ${process.pid} is running.`);
-
-      this.container.add('kernel', new Kernel(
-        this.getContainer(),
-        new Router(new Collection())
-      ));
 
       for (let i = 0; i < 1; i++) {
         cluster.fork();
       }
 
     } else {
-      const kernel = this.container.make('kernel');
-      this.container.add('server', http.createServer(kernel.handle.bind(kernel)));
-      this.container.make('server').listen(8000);
+      const server = http.createServer((req, res) => kernel.handle(req, res));
+
+      console.info(`Worker ${process.pid} spawned HTTP Server on port 8000`);
+
+      server.listen(8000);
     }
   }
 }

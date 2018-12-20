@@ -1,4 +1,4 @@
-import { Matcher } from './Matcher';
+import pathToRegexp from 'path-to-regexp';
 
 export class Route {
   protected uri;
@@ -53,8 +53,8 @@ export class Route {
    * @returns {boolean}
    */
   matches(path: string) {
-    const matcher = new Matcher(path, this);
-    return matcher.resolves();
+    const re = pathToRegexp(this.uri);
+    return re.exec(path);
   }
 
   /**
