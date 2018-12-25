@@ -1,0 +1,17 @@
+{
+  "extends": "../tsconfig-build.json",
+
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": ".",
+    "emitDecoratorMetadata": true,
+    "paths": {
+      "@oh-node/router": ["../../dist/packages/router"]
+    },
+    "outDir": "../../dist/packages/router"
+  },
+
+  "files": [
+    "index.ts"
+  ]
+}

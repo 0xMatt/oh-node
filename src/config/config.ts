@@ -1,10 +1,9 @@
 import * as fs from 'fs';
 
-
 export class Config {
   protected path: string;
   protected env: string;
-  protected configs: Array<any> = [];
+  protected configs: any;
 
   constructor(path: string, env: string) {
     this.path = path;
@@ -14,7 +13,7 @@ export class Config {
   }
 
   get(key: string, value?) {
-    if (this.configs.indexOf(key) !== -1) {
+    if (typeof this.configs[key] !== 'undefined') {
       return this.configs[key];
     }
   }
@@ -24,14 +23,9 @@ export class Config {
   }
 
   load() {
-    const self = this;
-    fs.readdir(`${this.path}/config`, function (err, items) {
-      console.log(items);
-
-      for (let i = 0; i < items.length; i++) {
-        self.configs[items[i].replace('.ts', '')] = require(`${self.path}/config/${items[i]}`);
-      }
-      console.log('configs', self.configs);
+    const files = fs.readdirSync(`${this.path}/config`);
+    files.forEach(file => {
+      this.configs[file.replace('.ts', '')] = require(`${this.path}/config/${file}`);
     });
   }
 }

@@ -1,6 +1,5 @@
-
-import { Container } from '../Kernel';
-import { Router, Route } from '../Routing';
+import { Container } from '../kernel';
+import { Route, Router } from '../router';
 
 export class Kernel {
 
@@ -30,10 +29,8 @@ export class Kernel {
    * @param response
    */
   handle(request, response) {
-
-    console.log('Incoming request', request);
-
-    const route = this.router.resolve(request);
+    const route = this.router.match(request.url);
+    console.log('route', route);
     if (!route) {
       response.writeHead(404);
       return response.end('Page not found');
@@ -44,7 +41,7 @@ export class Kernel {
       response.end(this.resolve(route));
     } catch {
       response.writeHead(500);
-      response.end('Server error.');
+      response.end('Internal Server Error');
     }
   }
 

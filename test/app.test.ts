@@ -1,6 +1,6 @@
 import { Web } from '../src/Kernel/Application';
 import { Container } from '../src/Kernel';
-import { Config } from '../src/Config';
+import { Config } from 'config';
 
 let app: Web;
 

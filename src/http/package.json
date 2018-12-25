@@ -1,0 +1,17 @@
+{
+  "name": "@oh-node/http",
+  "version": "0.0.1",
+  "description": "Oh Node's configuration component.",
+  "main": "dist/index.js",
+  "author": "0xMatt <matthew.javelet@gmail.com",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oh-node/skeleton"
+  },
+  "peerDependencies": {
+    "@oh-node/kernel": "^0.0.1",
+    "@oh-node/config": "^0.0.1",
+    "@oh-node/router": "^0.0.1"
+  }
+}

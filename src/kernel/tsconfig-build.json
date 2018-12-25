@@ -1,0 +1,16 @@
+{
+  "extends": "../tsconfig-build.json",
+
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": ".",
+    "paths": {
+      "@oh-node/kernel": ["."]
+    },
+    "outDir": "../../dist/packages/kernel"
+  },
+
+  "files": [
+    "index.ts"
+  ]
+}

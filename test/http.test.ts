@@ -1,5 +1,5 @@
-import {Kernel} from '../src/Http/Kernel';
-import {Container} from '../src/Kernel/Container';
+import {Kernel} from '../src/http/kernel';
+import {Container} from 'container.ts';
 import {Router, Collection} from '../src/Routing';
 
 describe('http kernel', () => {

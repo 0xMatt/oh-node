@@ -1,8 +1,8 @@
-import { Container } from './Container';
-import { Service } from './Service';
-import { Config } from '../Config';
+import { Container } from './container';
+import { Service } from './service';
 import * as cluster from 'cluster';
 import * as dotenv from 'dotenv';
+import { Config } from '../config';
 
 export abstract class App {
 
@@ -39,8 +39,10 @@ export abstract class App {
 
   /**
    *
+   * @param path
    */
-  constructor(path?: string) {
+  constructor(path: string) {
+    process.env['APP_PATH'] = path;
     this.path = path;
     this.config = new Config(this.getPath(), dotenv.config());
     this.container = new Container;

@@ -1,0 +1,18 @@
+{
+  "name": "@oh-node/kernel",
+  "version": "0.0.1",
+  "description": "Oh Node's core kernel",
+  "main": "dist/index.js",
+  "author": "0xMatt <matthew.javelet@gmail.com",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oh-node/skeleton"
+  },
+  "dependencies": {
+    "tslib": "^1.9.0"
+  },
+  "devDependencies": {
+    "tsutils": "2.27.2"
+  }
+}
