@@ -1,14 +1,13 @@
 import { Container } from './container';
 import { Service } from './service';
 import { Config } from '@oh-node/config';
-import * as cluster from 'cluster';
 
 export abstract class App {
 
   /**
    * @param string
    */
-  protected version: string = '0.1.0';
+  protected version: string = '0.0.0';
 
   /**
    * @param boolean

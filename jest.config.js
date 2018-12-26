@@ -4,6 +4,7 @@ module.exports = {
             tsConfig: 'tsconfig.json'
         }
     },
+  testPathIgnorePatterns: ["/dist/", "/node_modules/", "/index/"],
     moduleFileExtensions: [
         'ts',
         'js'
@@ -13,6 +14,11 @@ module.exports = {
     },
     testMatch: [
       '**/packages/*/test/*.spec.(ts|js)'
+    ],
+    "collectCoverageFrom": [
+      "**/packages/*/src/**/*.{ts,tsx}",
+      "!**/node_modules/**",
+      "!**/index.ts",
     ],
     testEnvironment: 'node'
 };

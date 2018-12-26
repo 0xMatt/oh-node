@@ -1,11 +1,10 @@
-import {Kernel} from '../src/http/kernel';
-import {Container} from 'container.ts';
-import {Router, Collection} from '../src/Routing';
+import {Kernel} from '../src/kernel';
+import {Container} from '@oh-node/kernel';
+import {Router, Collection} from '@oh-node/router';
 
 describe('http kernel', () => {
   test('can handle requests', () => {
     const kernel = new Kernel(
-      new Container(),
       new Router(new Collection())
     );
 
@@ -24,7 +23,7 @@ describe('http kernel', () => {
       return 1;
     });
 
-    const kernel = new Kernel(new Container, new Router(routes));
+    const kernel = new Kernel(new Router(routes));
     expect(kernel.resolve(routes.getRoutes()[1])).toEqual(1);
 
   });

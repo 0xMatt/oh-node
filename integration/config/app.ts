@@ -1,4 +1,4 @@
-import { DummyService } from "../src/services/dummy";
+import { DummyService } from '../src/services/dummy';
 
 module.exports = {
   debug: true,
@@ -13,3 +13,4 @@ module.exports = {
     DummyService
   }
 };
+

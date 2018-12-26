@@ -1,13 +1,16 @@
 {
-  "name": "oh-node",
-  "version": "0.0.1",
+  "name": "root",
+  "version": "0.0.0",
   "description": "",
   "private": true,
   "scripts": {
-    "build": "lerna run --parallel tsc",
+    "start": "npm i --only=dev && lerna bootstrap",
+    "build": "lerna run tsc",
     "watch": "lerna run --parallel dev",
     "test": "jest --coverage --verbose --colors --silent",
-    "lint": "tslint -c tslint.json -p tsconfig.json"
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "clean": "lerna clean && rm -rf ./packages/*/package-lock.json ./packages/*/dist"
   },
   "author": "0xMatt",
   "license": "MIT",
@@ -19,11 +22,12 @@
   "devDependencies": {
     "@types/jest": "^23.3.7",
     "@types/node": "^10.12.0",
+    "coveralls": "^3.0.2",
     "jest": "^23.6.0",
     "lerna": "^3.8.0",
     "supertest": "^3.3.0",
     "ts-jest": "^23.10.4",
     "tslint": "^5.11.0",
-    "typescript": "^3.1.3"
+    "typescript": "^3.2.2"
   }
 }
