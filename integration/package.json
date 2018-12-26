@@ -1,0 +1,21 @@
+{
+  "name": "integration",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "nodemon -e ts -w ./src -x npm run start",
+    "start": "ts-node --inspect src/app.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "0xMatt <matthew.javelet@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@oh-node/bootloader": "file:../packages/bootloader",
+    "@oh-node/config": "file:../packages/config",
+    "@oh-node/http": "file:../packages/http",
+    "@oh-node/kernel": "file:../packages/kernel",
+    "@oh-node/router": "file:../packages/router",
+    "ts-node": "^7.0.1"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "@oh-node/router",
+  "version": "0.0.1",
+  "description": "> TODO: description",
+  "author": "0xMatt <matthew.javelet@gmail.com>",
+  "homepage": "https://gitlab.com/oh-node/framework#readme",
+  "bugs": "https://gitlab.com/oh-node/framework/issues",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "directories": {
+    "dist": "dist",
+    "test": "test"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/oh-node/framework.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "tsc -w",
+    "tsc": "tsc"
+  },
+  "dependencies": {
+    "path-to-regexp": "^2.4.0",
+    "tslib": "^1.9.3"
+  },
+  "peerDependencies": {
+    "@oh-node/http": "^0.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.18"
+  }
+}

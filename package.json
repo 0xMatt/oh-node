@@ -4,8 +4,8 @@
   "description": "",
   "private": true,
   "scripts": {
-    "dev": "nodemon -e ts --exec \"npm run build\"",
-    "build": "tsc --build src/tsconfig.json && ./build.sh",
+    "build": "lerna run --parallel tsc",
+    "watch": "lerna run --parallel dev",
     "test": "jest --coverage --verbose --colors --silent",
     "lint": "tslint -c tslint.json -p tsconfig.json"
   },
@@ -13,7 +13,8 @@
   "license": "MIT",
   "dependencies": {
     "dotenv": "^6.1.0",
-    "path-to-regexp": "^2.4.0"
+    "path-to-regexp": "^2.4.0",
+    "tslib": "^1.9.3"
   },
   "devDependencies": {
     "@types/jest": "^23.3.7",

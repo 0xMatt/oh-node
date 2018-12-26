@@ -1,0 +1,38 @@
+{
+  "name": "@oh-node/config",
+  "version": "0.0.1",
+  "description": "> TODO: description",
+  "author": "0xMatt <matthew.javelet@gmail.com>",
+  "homepage": "https://gitlab.com/oh-node/framework#readme",
+  "bugs": "https://gitlab.com/oh-node/framework/issues",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "directories": {
+    "dist": "dist",
+    "test": "test"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/oh-node/framework.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "tsc -w",
+    "tsc": "tsc"
+  },
+  "peerDependencies": {
+    "@oh-node/kernel": "^0.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.18"
+  },
+  "dependencies": {
+    "tslib": "^1.9.3"
+  }
+}
