@@ -23,9 +23,8 @@
     "access": "public"
   },
   "dependencies": {
-    "tslib": "^1.9.3",
-    "@oh-node/router": "^0.0.1",
-    "@oh-node/kernel": "^0.0.1"
+    "@oh-node/kernel": "^0.0.1",
+    "@oh-node/router": "^0.0.1"
   },
   "scripts": {
     "dev": "tsc -w",

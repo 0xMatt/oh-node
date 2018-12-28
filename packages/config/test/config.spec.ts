@@ -1,3 +1,7 @@
-test('Fake test', () => {
-  expect(true).toBeTruthy();
+describe('Config', () => {
+
+  it('can be loaded', () => {
+
+  });
+
 });

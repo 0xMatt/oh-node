@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "start": "npm i --only=dev && lerna bootstrap",
+    "start": "npm i && lerna bootstrap",
     "build": "lerna run tsc",
     "watch": "lerna run --parallel dev",
     "test": "jest --coverage --verbose --colors --silent",
@@ -12,7 +12,7 @@
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "clean": "lerna clean && rm -rf ./packages/*/package-lock.json ./packages/*/dist"
   },
-  "author": "0xMatt",
+  "author": "0xMatt <matthew.javelet@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "dotenv": "^6.1.0",

@@ -3,7 +3,7 @@ import { DummyService } from '../src/services/dummy';
 module.exports = {
   debug: true,
   workers: 0,
-  name: 'oh-node',
+  name: 'app',
   timezone: 'UTC',
   charset: 'utf-8',
   services: {

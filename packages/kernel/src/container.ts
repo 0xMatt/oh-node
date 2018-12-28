@@ -11,7 +11,7 @@ export class Container {
    * @param member any
    */
   add(alias: string, member: any): this {
-    this.members[alias] = member;
+    this.members[alias] = this.clone(member);
 
     return this;
   }
@@ -20,7 +20,7 @@ export class Container {
    * @param string alias
    */
   has(alias: string): boolean {
-    return this.members.indexOf(alias) >= -1;
+    return typeof this.members[alias] !== 'undefined';
   }
 
   /**
@@ -77,5 +77,9 @@ export class Container {
    */
   protected resolve(object) {
     return new object;
+  }
+
+  private clone(obj) {
+    return Object.assign(Object.create(obj), obj);
   }
 }

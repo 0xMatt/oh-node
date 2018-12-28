@@ -32,8 +32,5 @@
     "@oh-node/http": "^0.0.1",
     "@oh-node/router": "^0.0.1",
     "tslib": "^1.9.3"
-  },
-  "devDependencies": {
-    "@types/node": "^10.12.18"
   }
 }

@@ -1,30 +1,4 @@
-import { Collection, Route, Router } from '../src';
-
-describe('Router', () => {
-  test('can match existing route', () => {
-    const collection = new Collection();
-    collection.add('/', '', 'test@test');
-    const router = new Router(collection);
-    expect(router.match('/')).toBeTruthy();
-  });
-
-  test('won\'t resolve an invalid route', () => {
-    const router = new Router(new Collection());
-    expect(router.match('/')).toBeFalsy();
-  });
-});
-
-
-describe('Router Collection', () => {
-
-  test('can store new routes', () => {
-    const collection = new Collection();
-
-    expect(collection.getRoutes().length).toBe(0);
-    collection.add('/', 'index', 'MyController@Action');
-    expect(collection.getRoutes().length).toBe(1);
-  });
-});
+import { Route } from '../src';
 
 describe('Route', () => {
 
@@ -76,4 +50,5 @@ describe('Route', () => {
     const params = route.getParams();
     expect(params.foo).toEqual('bar');
   });
+
 });

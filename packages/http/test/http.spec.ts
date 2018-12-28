@@ -24,7 +24,7 @@ describe('http kernel', () => {
     });
 
     const kernel = new Kernel(new Router(routes));
-    expect(kernel.resolve(routes.getRoutes()[1])).toEqual(1);
+    expect(kernel.resolve(routes.getRoutes()[1], {}, {})).toEqual(1);
 
   });
 });

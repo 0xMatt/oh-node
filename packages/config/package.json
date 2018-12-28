@@ -28,11 +28,5 @@
   },
   "peerDependencies": {
     "@oh-node/kernel": "^0.0.1"
-  },
-  "devDependencies": {
-    "@types/node": "^10.12.18"
-  },
-  "dependencies": {
-    "tslib": "^1.9.3"
   }
 }

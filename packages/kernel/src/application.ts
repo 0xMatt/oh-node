@@ -2,7 +2,7 @@ import { Container } from './container';
 import { Service } from './service';
 import { Config } from '@oh-node/config';
 
-export abstract class App {
+export abstract class Application {
 
   /**
    * @param string
@@ -42,8 +42,8 @@ export abstract class App {
   constructor(path: any) {
     process.env['APP_PATH'] = path;
     this.path = path;
-    this.config = new Config(this.getPath(), process.env);
-    this.container = new Container;
+    this.config = new Config(this.getPath());
+    this.container = new Container();
     this.container.add('config', this.config);
   }
 

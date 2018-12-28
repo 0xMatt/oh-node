@@ -4,7 +4,6 @@ module.exports = {
             tsConfig: 'tsconfig.json'
         }
     },
-  testPathIgnorePatterns: ["/dist/", "/node_modules/", "/index/"],
     moduleFileExtensions: [
         'ts',
         'js'
@@ -13,7 +12,7 @@ module.exports = {
         '^.+\\.(ts|tsx)$': 'ts-jest'
     },
     testMatch: [
-      '**/packages/*/test/*.spec.(ts|js)'
+      '**/packages/*/test/*.spec.ts'
     ],
     "collectCoverageFrom": [
       "**/packages/*/src/**/*.{ts,tsx}",

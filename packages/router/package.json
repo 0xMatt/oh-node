@@ -27,13 +27,6 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "path-to-regexp": "^2.4.0",
-    "tslib": "^1.9.3"
-  },
-  "peerDependencies": {
-    "@oh-node/http": "^0.0.1"
-  },
-  "devDependencies": {
-    "@types/node": "^10.12.18"
+    "path-to-regexp": "^2.4.0"
   }
 }

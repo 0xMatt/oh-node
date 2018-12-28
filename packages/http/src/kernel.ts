@@ -29,7 +29,7 @@ export class Kernel {
 
     try {
       response.writeHead(200);
-      response.end(this.resolve(route));
+      response.end(this.resolve(route, request, response));
     } catch {
       response.writeHead(500);
       response.end('Internal Server Error');
@@ -40,14 +40,12 @@ export class Kernel {
    *
    * @param route
    */
-  resolve(route: Route) {
-    if (typeof route.getAction === 'function') {
-      const action = route.getAction();
-      console.log('action', action);
-      return action(route.getParams());
+  resolve(route: Route, request: any, response: any) {
+    const action = route.getAction();
+    if (typeof action == 'function') {
+      return action(request, response);
     }
-
-    const {controller, method} = route.getAction();
+    const {controller, method} = action;
     const obj = new controller;
     return obj[method];
   }

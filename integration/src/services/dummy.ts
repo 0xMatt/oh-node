@@ -1,4 +1,4 @@
-import {Service} from '@oh-node/kernel';
+import { Service } from '@oh-node/kernel';
 
 export class Dummy extends Service {
   bootstrap() {
@@ -6,8 +6,10 @@ export class Dummy extends Service {
     this.container.add('dummy', service);
   }
 }
+
 export class DummyService {
   private foo: string;
+
   constructor(foo: string) {
     this.foo = foo;
   }

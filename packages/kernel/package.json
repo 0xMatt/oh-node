@@ -27,10 +27,6 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "@oh-node/config": "^0.0.1",
-    "tslib": "^1.9.3"
-  },
-  "devDependencies": {
-    "@types/node": "^10.12.18"
+    "@oh-node/config": "^0.0.1"
   }
 }

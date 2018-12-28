@@ -1,16 +1,16 @@
-import { App } from '@oh-node/kernel';
+import { Application } from '@oh-node/kernel';
 import { Kernel } from '@oh-node/http';
 import { Collection, Router } from '@oh-node/router';
 
-import * as http from 'http';
+import * as http from "http";
 import * as cluster from 'cluster';
 
-export class Web extends App {
+export class Web extends Application {
 
   /**
    *
    */
-  boot() {
+  boot(): void {
 
     const config = this.container.make('config');
     const routes = config.get('routes');
@@ -20,8 +20,7 @@ export class Web extends App {
       collection.add(route.path, route.name, route.action);
     });
 
-    console.debug(`[Router] Loaded ${collection.getRoutes().length} routes.`, collection);
-
+    console.debug(`[Router] Loaded ${collection.getRoutes().length} routes.`);
     const kernel = new Kernel(new Router(collection));
 
     if (cluster.isMaster) {
