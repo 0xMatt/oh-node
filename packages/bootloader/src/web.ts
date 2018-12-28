@@ -2,7 +2,7 @@ import { Application } from '@oh-node/kernel';
 import { Kernel } from '@oh-node/http';
 import { Collection, Router } from '@oh-node/router';
 
-import * as http from "http";
+import * as http from 'http';
 import * as cluster from 'cluster';
 
 export class Web extends Application {

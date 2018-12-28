@@ -1,4 +1,4 @@
-import { Web } from "../src/web";
+import { Web } from '../src/web';
 import { Container } from '@oh-node/kernel';
 import { Config } from '@oh-node/config';
 

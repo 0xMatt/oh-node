@@ -1,6 +1,6 @@
-import {Kernel} from '../src/kernel';
-import {Container} from '@oh-node/kernel';
-import {Router, Collection} from '@oh-node/router';
+import { Kernel } from '../src/kernel';
+import { Container } from '@oh-node/kernel';
+import { Router, Collection } from '@oh-node/router';
 
 describe('http kernel', () => {
   test('can handle requests', () => {
