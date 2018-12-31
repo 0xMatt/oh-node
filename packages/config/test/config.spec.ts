@@ -1,4 +1,4 @@
-import {Config} from './../src';
+import { Config } from './../src';
 
 describe('Config', () => {
 
@@ -12,7 +12,7 @@ describe('Config', () => {
   it('can get specific configurations', () => {
     const config = new Config(path);
     expect(config.get('app')).toEqual({foo: 'bar'});
-  })
+  });
 
   it('can override existing settings', () => {
     const config = new Config(path);
