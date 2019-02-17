@@ -26,15 +26,18 @@ export class Container {
   /**
    * @param any member
    */
-  make(member: any) {
+  make(member: string|object): any {
+
     const key: string = (typeof member === 'object') ? member.constructor.name : member;
 
-    if (this.members.indexOf(key) >= -1) {
-      return this.build(this.members[member]);
+    if (this.has(key)) {
+      return this.build(this.members[key]);
     }
 
     if (typeof member === 'object') {
-      return this.members[key] = member;
+      this.members[key] = member;
+
+      return member;
     }
 
     return this.locate(key, member);
@@ -44,9 +47,9 @@ export class Container {
    *
    * @param member
    */
-  protected build(member) {
+  protected build(member): any {
     if (typeof member === 'function') {
-      return member(this);
+      return new member(this);
     }
 
     return member;
@@ -60,23 +63,24 @@ export class Container {
   protected locate(key, member) {
     const aliases = this.members.filter(n => {
 
-      let object = n;
+      let obj = n;
       if (typeof n === 'function') {
-        object = n(this);
+        obj = n(this);
       }
 
-      return object instanceof member;
+      return obj instanceof member;
     });
 
-    return this.members[key] = this.resolve(key);
+    this.members[key] = this.build(member);
+    return this.members[key];
   }
 
   /**
    *
    * @param object
    */
-  protected resolve(object) {
-    return new object;
+  protected resolve(obj) {
+    return new obj; 
   }
 
   private clone(obj) {

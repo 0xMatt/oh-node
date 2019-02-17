@@ -1,3 +1,5 @@
+import { Home } from './../src/controllers';
+
 module.exports = [
   {
     path: '/',
@@ -13,7 +15,7 @@ module.exports = [
   },
   {
     path: '/controller',
-    action: 'Controller@index'
+    action: Home.index
   }
 ];
 

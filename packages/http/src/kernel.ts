@@ -46,6 +46,7 @@ export class Kernel {
       return action(request, response);
     }
     const {controller, method} = action;
+
     const obj = new controller;
     return obj[method];
   }
